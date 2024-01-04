@@ -3,9 +3,29 @@ from llama_index import VectorStoreIndex, ServiceContext, Document
 from llama_index.llms import OpenAI
 import openai
 from llama_index import SimpleDirectoryReader
+from pathlib import Path
+from PIL import Image
 
 openai.api_key = st.secrets.api_credentials.openai_key
-st.header("Chat with the Streamlit docs 💬 📚")
+
+image_path = Path('images/logo.png')
+logo = Image.open(image_path)
+st.set_page_config(
+    page_title="Innovation Bot",
+    page_icon=logo,
+)
+with st.sidebar:
+    image_path = Path('images/logo1.png')
+    logo = Image.open(image_path)
+    st.image(logo)
+    st.title("Welcome to Waterstons Innovation bot!")
+    st.markdown("This chatbot will answer all of your questions about Innovation.")
+    st.markdown("For more information about our team and what we get up to please check out our **substack:** https://waterstonsinnovation.substack.com/")
+
+image_path = Path('images/robot_dog.png')
+image1 = Image.open(image_path)
+st.image(image1, use_column_width=True)
+st.header("Welcome to the Waterstons Innovation Bot 💬 ")
 
 if "messages" not in st.session_state.keys(): # Initialize the chat message history
     st.session_state.messages = [
@@ -32,9 +52,13 @@ for message in st.session_state.messages: # Display the prior chat messages
     with st.chat_message(message["role"]):
         st.write(message["content"])
 
+image_path = Path('images/assistant.png')
+assistant_img = Image.open(image_path)
+image_path = Path('images/user.png')
+user_img = Image.open(image_path)
         # If last message is not from assistant, generate a new response
 if st.session_state.messages[-1]["role"] != "assistant":
-    with st.chat_message("assistant"):
+    with st.chat_message("assistant", avatar=assistant_img):
         with st.spinner("Thinking..."):
             response = chat_engine.chat(prompt)
             st.write(response.response)

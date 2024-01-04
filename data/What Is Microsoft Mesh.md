@@ -1,5 +1,5 @@
-#What Is Microsoft Mesh?
-##Will the future of Microsoft Teams be in the Metaverse? Waterstons Innovation: The Dots #12
+# What Is Microsoft Mesh?
+## Will the future of Microsoft Teams be in the Metaverse? Waterstons Innovation: The Dots #12
 
 Many of us will use, almost exclusively, Microsoft products in our workplace. Teams and Outlook will be how a huge amount of our communication happens with our coworkers. Now, Microsoft wants to give us a tool to make talking to them feel more natural.
 
@@ -7,7 +7,7 @@ Microsoft Mesh is their attempt to create an immersive, 3D meeting platform. In 
 
 What is this? This is The Dots, our newsletter about exciting things we find in the world of innovation. We imagine innovation as connecting the dots; putting together a jigsaw. Our puzzle pieces are the pieces of interesting information we absorb in the world, our partners and their products. Innovation happens when we connect these pieces in new and interesting ways. This newsletter is about these dots we find and connect.
 
-###Microsoft Mesh
+### Microsoft Mesh
 3D meeting software is one of the most common use cases of VR headsets and why (we are told) the “metaverse” might be the future. Mesh is Microsoft’s attempt to show us if that will be true. Microsoft already has a huge foothold into how we communicate at work - Outlook and Teams are almost all I use, at least - Mesh aims to build upon that.
 
 Simply: Mesh is a tool like Teams. You can use it on your computer like Teams or Outlook, or use it in a VR headset like an Oculus Quest. While in Teams you view people as 2D videos, in Mesh you are an avatar (an animated version of yourself) in 3D where you can walk around in a 3D space (like a model of your office!).
@@ -16,18 +16,18 @@ Mesh retains a lot of features of modern online meetings - you can share your co
 
 Of course, this is a Microsoft product, so it comes along with all the enterprise-grade security you expect and the integrations into other Microsoft products.
 
-###How Will I Use It?
+### How Will I Use It?
 Right now, Mesh is in Public Preview, so there are only two ways to use it:
 
-On your Windows Desktop
+* On your Windows Desktop
 
-On a VR headset (right now, it has to be an Oculus Quest)
+* On a VR headset (right now, it has to be an Oculus Quest)
 
 Just like in Teams and Outlook, Mesh has meetings you can join. They will be in your Outlook calendar the same as every other meeting you currently have.
 
 In the future, it will be available on everything else (I assume)
 
-###Why Would I Want to Use It?
+### Why Would I Want to Use It?
 A very good question is “why would I use this over Teams?” After all, we are all probably (reasonably) happy with Zoom and Teams. The 3D world of Mesh will probably have a steeper learning curve than using the flatter, 2D Teams, so what does Mesh have to offer that Teams doesn’t?
 
 Meeting in real life still has a lot of benefits to meeting over Teams. Being in the same space as someone (for me at least) makes the conversation more natural and productive. Microsoft hopes that being more immersive can close the gap being meeting in real life and meeting virtually.
@@ -38,7 +38,7 @@ The space you meet in could be made to look like the actual physical offices you
 
 There is an argument that this will make meetings more fun and engaging, giving people another tool to use to communicate that they may be more comfortable with.
 
-###Why We Think This Might Be Good
+### Why We Think This Might Be Good
 We have been thinking about the “metaverse” for a while now in the Innovation Teams (getting Oculus Quests was one of the first things we did), and have done plenty of research into how it can be used for the future of work.
 
 We have always found previous efforts from companies like Meta lacking - they were always too clunky to use, confusing to access, difficult to teach to others, or just slow. While they showed potential, it never became our default way of having a meeting, and it was hard to recommend it to others.
@@ -53,7 +53,14 @@ Making large pieces of enterprise software, made for mass-market adoption is wha
 
 The development experience seems to be very well thought out. We will talk about this much more in-depth in the future, but for the time being it looks impressive. This will be important as Microsoft has promised a lot of customizability to the experience, letting you really tailor it to your organisation.
 
-###How Can I Try It Out?
+### How Can I Try It Out?
 Depending on what Microsoft licenses your organisation has, you can try out Microsoft Mesh today. However, if you don't have those licences there’s another option...
 
 Instead, you could call us! Send us an email and we would love to talk to you about it, or even have you come to the office for a coffee and a trip to the metaverse.
+
+### You Might Have Missed It…
+Would you pay for Twitter? Under the guise of stopping bots, new users of Twitter (or X…) in New Zealand and the Philippines will now have to pay for Twitter. It will only be $1 a year - but is it the start of Elon Musk attempting to find more ways to get money out of you to tweet?
+
+### The Next Start-Up Unicorn
+A Colin the Caterpillar that is just faces and butts
+
