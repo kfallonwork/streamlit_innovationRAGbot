@@ -3,6 +3,7 @@ from llama_index import VectorStoreIndex, ServiceContext, Document
 from llama_index.llms import OpenAI
 import openai
 from llama_index import SimpleDirectoryReader
+from llama_index.evaluation import ResponseEvaluator
 from pathlib import Path
 from PIL import Image
 
@@ -35,15 +36,16 @@ if "messages" not in st.session_state.keys(): # Initialize the chat message hist
 
 @st.cache_resource(show_spinner=False)
 def load_data():
-    with st.spinner(text="Loading and indexing the Streamlit docs – hang tight! This should take 1-2 minutes."):
+    with st.spinner(text="Loading and indexing the Innovation Team's knowledge – hang tight! This should take 1-2 minutes."):
         reader = SimpleDirectoryReader(input_dir="./data", recursive=True)
         docs = reader.load_data()
-        service_context = ServiceContext.from_defaults(llm=OpenAI(model="gpt-3.5-turbo", temperature=0.5, system_prompt="You are an expert on the Waterstons Innovation team's blog posts and your job is to answer technical questions. Assume that all questions are related to the innovation team's blog posts, and only provide answers with information from these blogs. Keep your answers technical and based on facts – do not hallucinate blog posts."))
+        service_context = ServiceContext.from_defaults(llm=OpenAI(model="gpt-3.5-turbo", temperature=0.5, system_prompt="You are an expert on the Waterstons Innovation team's blog posts and your job is to answer technical questions. Assume that all questions are related to the innovation team's blog posts, and only provide answers with information from these blogs. Keep your answers technical and based on facts – do not hallucinate blog posts. Include in your response a link to the relavant article."))
+        evaluator = ResponseEvaluator(service_context=service_context)
         index = VectorStoreIndex.from_documents(docs, service_context=service_context)
-        return index
+        return index, evaluator
 
-index = load_data()
-chat_engine = index.as_chat_engine(chat_mode="condense_question", verbose=True)
+index, evaluator = load_data()
+chat_engine = index.as_chat_engine(chat_mode="condense_question", verbose=True, )
 
 if prompt := st.chat_input("Your question"): # Prompt for user input and save to chat history
     st.session_state.messages.append({"role": "user", "content": prompt})
@@ -61,6 +63,12 @@ if st.session_state.messages[-1]["role"] != "assistant":
     with st.chat_message("assistant", avatar=assistant_img):
         with st.spinner("Thinking..."):
             response = chat_engine.chat(prompt)
+            # print(response.source_nodes[0].metadata["file_name"])
+            # print(response.source_nodes[0].score)
+            # print(response.source_nodes[0])
+            eval_result = evaluator.evaluate_response(prompt, response)
+            print(str(eval_result.passing))
             st.write(response.response)
             message = {"role": "assistant", "content": response.response}
             st.session_state.messages.append(message) # Add response to message history
+            
