@@ -59,6 +59,7 @@ assistant_img = Image.open(image_path)
 image_path = Path('images/user.png')
 user_img = Image.open(image_path)
         # If last message is not from assistant, generate a new response
+
 if st.session_state.messages[-1]["role"] != "assistant":
     with st.chat_message("assistant", avatar=assistant_img):
         with st.spinner("Thinking..."):
@@ -66,9 +67,20 @@ if st.session_state.messages[-1]["role"] != "assistant":
             # print(response.source_nodes[0].metadata["file_name"])
             # print(response.source_nodes[0].score)
             # print(response.source_nodes[0])
-            eval_result = evaluator.evaluate_response(prompt, response)
-            print(str(eval_result.passing))
+            
+            # eval_result = evaluator.evaluate_response(response=response)
+            
             st.write(response.response)
+            response_str = response.response
+            print(response_str)
+            for source_node in response.source_nodes:
+                print(source_node.get_content())
+                eval_result = evaluator.evaluate(
+                        response=response_str, contexts=[source_node.get_content()]
+                )
+                print(str(eval_result.passing))
+                print(eval_result.feedback)
+                #print((source_node.get_content()))
             message = {"role": "assistant", "content": response.response}
             st.session_state.messages.append(message) # Add response to message history
             
